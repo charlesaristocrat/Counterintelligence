@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Контр-Разведка — Социальная инженерия, OSINT</title>
+<meta name="description" content="Контр-Разведка — молодое поколение разведки на основе открытых источников. OSINT-расследования, инструменты и наставничество.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a; --surface:#141414; --line:#262626;
+  --text:#f2f2f2; --muted:#9a9a9a; --accent:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font-family:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:800;letter-spacing:-.01em}
+nav{display:flex;align-items:center;gap:28px;font-size:15px;color:var(--muted)}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;padding:10px 20px;border-radius:999px;background:var(--text);color:#000;font-weight:700;font-size:15px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+nav .btn{color:#000}
+
+/* hero */
+.hero{padding:140px 0 120px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero-img{width:100%;height:auto;display:block;border-radius:16px;
+  -webkit-mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,#000 55%,transparent 100%);
+  mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,#000 55%,transparent 100%)}
+.hero h1{font-size:clamp(44px,8vw,96px);line-height:1;letter-spacing:-.04em;font-weight:800;max-width:11ch}
+.hero p{margin-top:28px;max-width:46ch;font-size:clamp(18px,2.2vw,22px);color:var(--muted)}
+.hero .btn{margin-top:36px}
+
+/* sections */
+section{padding:96px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;margin-bottom:40px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;transition:border-color .2s}
+a.card:hover{border-color:#5a5a5a}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+
+/* services */
+.price{margin-top:auto;padding-top:28px;font-size:28px;font-weight:800;letter-spacing:-.02em}
+
+/* footer */
+footer{padding:80px 0 56px}
+footer h2{margin-bottom:16px;font-size:clamp(24px,3.4vw,32px)}
+footer p{max-width:60ch;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
+.links a{font-weight:500}
+.links a:hover{text-decoration:underline;text-underline-offset:4px}
+
+@media (max-width:640px){
+  nav{gap:16px;font-size:14px}
+  .brand{display:none}
+  .hero{padding:64px 0 64px}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-img{max-width:360px;margin:0 auto;order:-1}
+  section{padding:72px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Контр-Разведка</a>
+    <nav>
+      <a href="#tools">Инструменты</a>
+      <a href="#services">Услуги</a>
+      <a class="btn" href="https://t.me/adapter_counter" target="_blank" rel="noopener">Вступить</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Находим и учимся</h1>
+        <p>Контр-Разведка — молодое поколение разведки на основе открытых источников</p>
+        <a class="btn" href="#services">Смотреть услуги</a>
+      </div>
+      <img class="hero-img" src="hero.jpg" alt="" width="900" height="1078">
+    </div>
+  </div>
+
+  <section id="tools">
+    <div class="wrap">
+      <h2>Инструменты</h2>
+      <div class="grid">
+        <a class="card" href="https://whiteboard.beer" target="_blank" rel="noopener"><h3>Whiteboard</h3><p>Инструмент для визуализации</p></a>
+        <a class="card" href="https://catharsis.icu/" target="_blank" rel="noopener"><h3>Catharsis</h3><p>Инструмент для систематизации</p></a>
+        <a class="card" href="https://github.com/xaynov-osint/txfetch" target="_blank" rel="noopener"><h3>TXFetch</h3><p>Инструмент для анализа транзакций в блокчейне</p></a>
+        <a class="card" href="https://reportframework.wiki/" target="_blank" rel="noopener"><h3>Report Framework</h3><p>Перечень инстанций для передачи отчётов</p></a>
+        <a class="card" href="https://t.me/Patharascan" target="_blank" rel="noopener"><h3>Patharscan</h3><p>Инструмент для блокчейн-анализа</p></a>
+        <a class="card" href="https://osintlist.cc/" target="_blank" rel="noopener"><h3>osintlist.cc</h3><p>Веб-агрегатор CLI-OSINT-инструментов</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Услуги проекта</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Расследования</h3>
+          <p>Stand-alone OSINT products и Stand-alone OSINT analytics products. Расследования с разными типами исходных данных и разным уровнем верификации под любые задачи.</p>
+          <div class="price">от 8.99 USDT</div>
+        </div>
+        <div class="card">
+          <h3>Наставничество</h3>
+          <p>Индивидуальное менторство без софистики и презентаций. Только практика и необходимая теория. Уроки в формате звонков.</p>
+          <div class="price">14.99 USDT</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Контр-Разведка — brand new OSINT</h2>
+    <p>Молодое поколение старой школы разведки на основе открытых источников. Продвигаем идеи постоянного самообучения, законной и прозрачной работы, открытости, дотошности на каждом этапе развед. мероприятий и стремления к великому.</p>
+    <div class="links">
+      <a href="https://t.me/adapter_counter" target="_blank" rel="noopener">Присоединяйся к нам</a>
+      <a href="https://t.me/bruhmaybe" target="_blank" rel="noopener">Свяжись с нами</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
