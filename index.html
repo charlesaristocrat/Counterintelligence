@@ -6,7 +6,7 @@
 <title>Контр-Разведка — Социальная инженерия, OSINT</title>
 <meta name="description" content="Контр-Разведка — молодое поколение разведки на основе открытых источников. OSINT-расследования, инструменты и наставничество.">
 <meta name="theme-color" content="#0a0a0a">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -25,7 +25,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 /* header */
 header{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{font-weight:800;letter-spacing:-.01em}
+.brand{display:flex;align-items:center}
+.brand img{height:44px;width:auto;display:block}
 nav{display:flex;align-items:center;gap:28px;font-size:15px;color:var(--muted)}
 nav a:hover{color:var(--text)}
 .btn{display:inline-block;padding:10px 20px;border-radius:999px;background:var(--text);color:#000;font-weight:700;font-size:15px;transition:transform .15s}
@@ -64,7 +65,6 @@ footer p{max-width:60ch;color:var(--muted)}
 
 @media (max-width:640px){
   nav{gap:16px;font-size:14px}
-  .brand{display:none}
   .hero{padding:64px 0 64px}
   .hero .wrap{grid-template-columns:1fr}
   .hero-img{max-width:360px;margin:0 auto;order:-1}
@@ -77,7 +77,7 @@ footer p{max-width:60ch;color:var(--muted)}
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top">Контр-Разведка</a>
+    <a class="brand" href="#top" aria-label="Контр-Разведка"><img src="logo.png" alt="Контр-Разведка" width="44" height="44"></a>
     <nav>
       <a href="#tools">Инструменты</a>
       <a href="#services">Услуги</a>
